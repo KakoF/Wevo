@@ -12,7 +12,7 @@ namespace Api.Domain.Dtos.User
         public string Telefone { get; set; }
         public string Sexo { get; set; }
         public DateTime DataNascimento { get; set; }
-        private DateTime CreateAt { get; set; }
+        private DateTime? CreateAt { get; set; }
 
     }
 }
