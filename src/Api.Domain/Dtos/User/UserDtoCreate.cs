@@ -24,6 +24,6 @@ namespace Api.Domain.Dtos.User
         public string Sexo { get; set; }
 
         [Required(ErrorMessage = "Data Nascimento é campo obrigatório.")]
-        public DateTime DataNascimento { get; set; }
+        public DateTime? DataNascimento { get; set; }
     }
 }

@@ -26,6 +26,7 @@ namespace Data.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Cpf")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("CreateAt")
@@ -55,9 +56,6 @@ namespace Data.Migrations
                         .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Cpf")
-                        .IsUnique();
 
                     b.ToTable("Users");
                 });

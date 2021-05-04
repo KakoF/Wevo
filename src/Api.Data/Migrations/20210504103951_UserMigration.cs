@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Data.Migrations
 {
-    public partial class User_Migration : Migration
+    public partial class UserMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,7 @@ namespace Data.Migrations
                     CreateAt = table.Column<DateTime>(nullable: true),
                     UpdateAt = table.Column<DateTime>(nullable: true),
                     Nome = table.Column<string>(maxLength: 60, nullable: false),
-                    Cpf = table.Column<string>(nullable: true),
+                    Cpf = table.Column<string>(nullable: false),
                     Email = table.Column<string>(nullable: false),
                     Telefone = table.Column<string>(nullable: false),
                     Sexo = table.Column<string>(nullable: false),
@@ -25,12 +25,6 @@ namespace Data.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Users_Cpf",
-                table: "Users",
-                column: "Cpf",
-                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
