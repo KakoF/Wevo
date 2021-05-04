@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Application.Controllers
 {
-    [Authorize("Bearer")]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase

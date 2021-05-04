@@ -49,8 +49,8 @@ namespace application
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Clean Architecture c# DDD",
-                    Description = "Arquitetura DDD",
+                    Title = "Wevo API",
+                    Description = "Desafio",
                     Contact = new OpenApiContact
                     {
                         Name = "Kako",

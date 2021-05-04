@@ -10,11 +10,17 @@ namespace Api.Domain.Models
             get { return _id; }
             set { _id = value; }
         }
-        private string _name;
-        public string Name
+        private string _nome;
+        public string Nome
         {
-            get { return _name; }
-            set { _name = value; }
+            get { return _nome; }
+            set { _nome = value; }
+        }
+        private string _cpf;
+        public string Cpf
+        {
+            get { return _cpf; }
+            set { _cpf = value; }
         }
 
         private string _email;
@@ -23,11 +29,23 @@ namespace Api.Domain.Models
             get { return _email; }
             set { _email = value; }
         }
-        private string _password;
-        public string Password
+        private string _telefone;
+        public string Telefone
         {
-            get { return _password; }
-            set { _password = value; }
+            get { return _telefone; }
+            set { _telefone = value; }
+        }
+        private string _sexo;
+        public string Sexo
+        {
+            get { return _sexo; }
+            set { _sexo = value; }
+        }
+        private DateTime _dataNascimento;
+        public DateTime DataNascimento
+        {
+            get { return _dataNascimento; }
+            set { _dataNascimento = value; }
         }
 
         private DateTime _createAt;

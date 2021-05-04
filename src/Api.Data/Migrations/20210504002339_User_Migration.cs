@@ -11,12 +11,15 @@ namespace Data.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Name = table.Column<string>(type: "character varying(60)", maxLength: 60, nullable: false),
-                    Email = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    Password = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
-                    CreateAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    UpdateAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: true)
+                    Id = table.Column<Guid>(nullable: false),
+                    CreateAt = table.Column<DateTime>(nullable: true),
+                    UpdateAt = table.Column<DateTime>(nullable: true),
+                    Nome = table.Column<string>(maxLength: 60, nullable: false),
+                    Cpf = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: false),
+                    Telefone = table.Column<string>(nullable: false),
+                    Sexo = table.Column<string>(nullable: false),
+                    DataNascimento = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -24,9 +27,9 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_Email",
+                name: "IX_Users_Cpf",
                 table: "Users",
-                column: "Email",
+                column: "Cpf",
                 unique: true);
         }
 

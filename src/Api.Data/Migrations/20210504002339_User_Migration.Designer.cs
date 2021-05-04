@@ -10,16 +10,16 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210323155712_User_Migration")]
+    [Migration("20210504002339_User_Migration")]
     partial class User_Migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 63)
-                .HasAnnotation("ProductVersion", "5.0.4")
-                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
+                .HasAnnotation("ProductVersion", "3.1.11")
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             modelBuilder.Entity("Api.Domain.Entities.UserEntity", b =>
                 {
@@ -27,28 +27,38 @@ namespace Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<string>("Cpf")
+                        .HasColumnType("text");
+
                     b.Property<DateTime?>("CreateAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("Email")
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-                        
-                    b.Property<string>("Password")
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Email")
                         .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("character varying(60)");
+                        .HasColumnType("text");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("character varying(60)")
+                        .HasMaxLength(60);
+
+                    b.Property<string>("Sexo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Email")
+                    b.HasIndex("Cpf")
                         .IsUnique();
 
                     b.ToTable("Users");

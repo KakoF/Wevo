@@ -13,8 +13,9 @@ namespace Api.CrossCutting.DependencyInjection
         {
             serviceCollection.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
             serviceCollection.AddDbContext<MyContext>(
-               options => options.UseNpgsql("Server=localhost;Port=5432;Database=SolidBase;User Id=kako;Password=kako123456;")
-           );
+                options => options.UseNpgsql("Server=localhost;Port=5432;Database=base;User Id=user;Password=password123456;"
+            )
+       );
         }
     }
 }
